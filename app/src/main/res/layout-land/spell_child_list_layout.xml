@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0F000000"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jt.getdunked.ChampionActivity$PlaceholderFragment" >
+    
+    <ImageView
+        android:id="@+id/positioning"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="wut" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_range_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="RANGE"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_range_title"
+        android:layout_below="@+id/tv_range_title"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="#333333"
+        android:textSize="12sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_cooldown_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COOLDOWN"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_alignTop="@+id/positioning"
+        android:layout_centerHorizontal="true" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_cooldown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="test"
+        android:textColor="#333333"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_cooldown_title"
+        android:layout_centerHorizontal="true" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_spell_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="COST"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tv_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textColor="#333333"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_spell_title"
+        android:layout_alignRight="@+id/tv_spell_title"
+        android:layout_alignEnd="@+id/tv_spell_title"
+        android:gravity="right" />
+
+</RelativeLayout>

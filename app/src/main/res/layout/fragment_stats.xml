@@ -1,0 +1,448 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mrScrolls"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="404dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <com.jt.getdunked.RoboLightTextView
+            android:id="@+id/tv_stats_title_1"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="offensive"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_stats_title_1"
+            android:layout_below="@+id/tv_stats_title_1"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/rowTitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_blank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_lvl_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Level 1" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Per Level" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowAD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#22000000"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_ad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attack Damage" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_ad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="5" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_ad_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+23" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowAS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_as"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attack Speed" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_as"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0.67" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_as_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+2%" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#22000000"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attack Range" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_range"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="625" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_range_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+0" />
+            </TableRow>
+        </TableLayout>
+
+        <com.jt.getdunked.RoboLightTextView
+            android:id="@+id/tvStatsTitle2"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tableLayout"
+            android:layout_below="@+id/tableLayout"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="defensive"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TableLayout
+            android:id="@+id/tableLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvStatsTitle2"
+            android:layout_below="@+id/tvStatsTitle2"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/rowTitles2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_blank2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_lvl_1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Level 1" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_per_lvl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Per Level" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowHealth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Health" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="5" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_hp_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+23" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowHpRegen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#22000000"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_hp_regen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Health Regen" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_hp_regen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0.67" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_hp_regen_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+2%" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowArmor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_armor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Armor" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_armor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0.67" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_armor_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+2%" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowMr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#22000000"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_mr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Magic Resist" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0.67" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mr_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+2%" />
+            </TableRow>
+        </TableLayout>
+
+        <com.jt.getdunked.RoboLightTextView
+            android:id="@+id/tv_stats_title_2"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tableLayout2"
+            android:layout_below="@+id/tableLayout2"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="other"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TableLayout
+            android:id="@+id/tableLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_stats_title_2"
+            android:layout_below="@+id/tv_stats_title_2"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/rowTitles3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_blank_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_lvl_1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Level 1" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_per_lvl_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Per Level" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowMana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_mana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mana" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="5" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mana_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+23" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowManaRegen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#22000000"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_mana_regen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mana Regen" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mana_regen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0.67" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_mana_regen_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+2%" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowMovespeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center" >
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_title_movespeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movement Speed" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_movespeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="625" />
+
+                <com.jt.getdunked.RoboLightTextView
+                    android:id="@+id/tv_movespeed_per_lvl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+0" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</ScrollView>

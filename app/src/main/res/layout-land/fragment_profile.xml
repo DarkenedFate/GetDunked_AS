@@ -1,0 +1,233 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".ProfileFragment" >
+
+    <ImageView
+        android:id="@+id/ivSoloFiveIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignTop="@+id/ivTeamThreeIcon"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/challenger_i" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvFriendlyRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWeekNum"
+        android:layout_alignBottom="@+id/tvWeekNum"
+        android:layout_alignLeft="@+id/ivSoloFiveIcon"
+        android:layout_toLeftOf="@+id/ivTeamFiveIcon"
+        android:gravity="center"
+        android:text="SOLO 5V5"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvNameTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvFriendlyRed"
+        android:layout_alignBottom="@+id/tvFriendlyRed"
+        android:layout_alignLeft="@+id/ivTeamFiveIcon"
+        android:layout_alignRight="@+id/ivTeamFiveIcon"
+        android:gravity="center"
+        android:scrollHorizontally="true"
+        android:text="TEAM 5V5"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvThreeLeague"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivTeamThreeIcon"
+        android:layout_alignRight="@+id/ivTeamThreeIcon"
+        android:layout_below="@+id/ivTeamThreeIcon"
+        android:gravity="center"
+        android:text="League"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvFiveLeague"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSoloLeague"
+        android:layout_alignBottom="@+id/tvSoloLeague"
+        android:layout_alignLeft="@+id/ivTeamFiveIcon"
+        android:layout_alignRight="@+id/ivTeamFiveIcon"
+        android:gravity="center"
+        android:text="League"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvThreeLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvThreeLeague"
+        android:layout_alignRight="@+id/tvThreeLeague"
+        android:layout_below="@+id/tvThreeLeague"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="100 League Points"
+        android:textColor="#000000"
+        android:textSize="10sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvSoloLeague"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvThreeLeague"
+        android:layout_alignBottom="@+id/tvThreeLeague"
+        android:layout_alignLeft="@+id/ivSoloFiveIcon"
+        android:layout_alignRight="@+id/ivSoloFiveIcon"
+        android:gravity="center"
+        android:text="League"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvSoloLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvThreeLP"
+        android:layout_alignBottom="@+id/tvThreeLP"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="100 League Points"
+        android:textColor="#000000"
+        android:textSize="10sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvFiveLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSoloLP"
+        android:layout_alignBottom="@+id/tvSoloLP"
+        android:layout_alignLeft="@+id/tvFiveLeague"
+        android:layout_alignRight="@+id/tvFiveLeague"
+        android:gravity="center"
+        android:text="100 League Points"
+        android:textColor="#000000"
+        android:textSize="10sp" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvThreeWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/ivTeamThreeIcon"
+        android:layout_below="@+id/tvThreeLP"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="400"
+        android:textColor="#1be800"
+        android:layout_alignLeft="@+id/tvThreeLP"
+        android:layout_alignStart="@+id/tvThreeLP" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvSoloWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvThreeWins"
+        android:layout_alignLeft="@+id/tvSoloLeague"
+        android:layout_alignRight="@+id/tvSoloLeague"
+        android:gravity="center"
+        android:text="400"
+        android:textColor="#1be800" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvFiveWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvThreeWins"
+        android:layout_alignBottom="@+id/tvThreeWins"
+        android:layout_alignLeft="@+id/ivTeamFiveIcon"
+        android:layout_toRightOf="@+id/tvSoloWins"
+        android:gravity="center"
+        android:text="400"
+        android:textColor="#1be800"
+        android:layout_alignRight="@+id/tvFiveLP"
+        android:layout_alignEnd="@+id/tvFiveLP" />
+
+    <ImageView
+        android:id="@+id/ivTeamFiveIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/tvFriendlyRed"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/ivSoloFiveIcon"
+        android:src="@drawable/challenger_i" />
+
+    <ImageView
+        android:id="@+id/ivTeamThreeIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="38dp"
+        android:layout_toLeftOf="@+id/ivSoloFiveIcon"
+        android:src="@drawable/challenger_i" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvWeekNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ivSoloFiveIcon"
+        android:layout_alignLeft="@+id/ivTeamThreeIcon"
+        android:layout_alignRight="@+id/ivTeamThreeIcon"
+        android:gravity="center"
+        android:text="TEAM 3V3"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:typeface="normal" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvSoloLosses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvSoloWins"
+        android:layout_below="@+id/tvSoloWins"
+        android:layout_toRightOf="@+id/ivTeamThreeIcon"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#ff0000" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvThreeLosses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSoloLosses"
+        android:layout_alignBottom="@+id/tvSoloLosses"
+        android:layout_alignLeft="@+id/tvThreeWins"
+        android:layout_alignRight="@+id/tvThreeWins"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#ff0000" />
+
+    <com.jt.getdunked.RoboLightTextView
+        android:id="@+id/tvFiveLosses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSoloLosses"
+        android:layout_alignBottom="@+id/tvSoloLosses"
+        android:layout_alignLeft="@+id/tvFiveWins"
+        android:layout_alignRight="@+id/tvFiveWins"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#ff0000" />
+
+</RelativeLayout>
