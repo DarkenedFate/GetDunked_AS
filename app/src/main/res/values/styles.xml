@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Getdunked" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Getdunked" parent="android:Theme.Material">
         <item name="actionBarItemBackground">@drawable/selectable_background_getdunked</item>
         <item name="popupMenuStyle">@style/PopupMenu.Getdunked</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Getdunked</item>
@@ -46,11 +46,11 @@
         <item name="background">@drawable/ab_transparent_getdunked</item>
         <item name="progressBarStyle">@style/ProgressBar.Getdunked</item>
     </style>
-	
-    <style name="PopupMenu.Getdunked" parent="@style/Widget.AppCompat.PopupMenu">	
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_getdunked</item>	
+
+    <style name="PopupMenu.Getdunked" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_getdunked</item>
     </style>
-	
+
     <style name="DropDownListView.Getdunked" parent="@style/Widget.AppCompat.ListView.DropDown">
         <item name="android:listSelector">@drawable/selectable_background_getdunked</item>
     </style>
@@ -58,26 +58,25 @@
     <style name="ActionBarTabStyle.Getdunked" parent="@style/Widget.AppCompat.ActionBar.TabView">
         <item name="android:background">@drawable/tab_indicator_ab_getdunked</item>
     </style>
-	
+
     <style name="DropDownNav.Getdunked" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
         <item name="android:background">@drawable/spinner_background_ab_getdunked</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_getdunked</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_getdunked</item>
     </style>
-    
+
     <style name="ProgressBar.Getdunked" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_getdunked</item>
     </style>
-    
+
     <style name="ActionButton.CloseMode.Getdunked" parent="@style/Widget.AppCompat.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_getdunked</item>
     </style>
-    
+
     <!-- this style is only referenced in a Light.DarkActionBar based theme -->
     <style name="Theme.Getdunked.Widget" parent="@style/Theme.AppCompat">
         <item name="popupMenuStyle">@style/PopupMenu.Getdunked</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Getdunked</item>
-        <item name="android:textColor">#000000</item>
     </style>
 
 </resources>

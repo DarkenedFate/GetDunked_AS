@@ -9,7 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
@@ -37,11 +38,12 @@ import butterknife.InjectView;
 public class RecentGamesFragment extends Fragment {
 
     @InjectView(R.id.lv_recent_games)
-    ExpandableListView lvRecentGames;
+    ListView lvRecentGames;
     @InjectView(R.id.progressBar)
     ProgressBar progressBar;
 
     private List<Games> listGames = new ArrayList<Games>();
+    private Summoner summoner;
 
     /**
      * The fragment argument representing the section number for this fragment.
@@ -57,6 +59,7 @@ public class RecentGamesFragment extends Fragment {
         bundle.putInt("position", position);
         fragment.setArguments(bundle);
         return fragment;
+
     }
 
     public RecentGamesFragment() {
@@ -78,10 +81,19 @@ public class RecentGamesFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if (savedInstanceState != null) {
-            RecentGamesExpandableAdapter adapter = new RecentGamesExpandableAdapter(getActivity(),
-                    (List<Games>) savedInstanceState.getSerializable("listGames"));
+        if (listGames.size() > 0) {
+            RecentGamesAdapter adapter =
+                    new RecentGamesAdapter(getActivity(), listGames);
             lvRecentGames.setAdapter(adapter);
+
+            lvRecentGames.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, final View view, int i, long l) {
+                    CustomPopupWindow window = new CustomPopupWindow(getActivity(), listGames.get(i), summoner);
+                    window.initiatePopupWindow(getView());
+                }
+            });
+            progressBar.setVisibility(View.INVISIBLE);
         } else {
             new GetRecentGames(getActivity()).execute("nwilliams239");
         }
@@ -98,10 +110,11 @@ public class RecentGamesFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable("listGames", (ArrayList<Games>) listGames);
+        //outState.putSerializable("listGames", (ArrayList<Games>) listGames);
+        Log.w("RecentGamesFragment", "State saved: " + outState);
     }
 
-    class GetRecentGames extends AsyncTask<String, Void, List<Games>> {
+    class GetRecentGames extends AsyncTask<String, Void, List<Games>> implements AdapterView.OnItemClickListener {
 
         private Context mContext;
         private Gson gson = new Gson();
@@ -113,10 +126,11 @@ public class RecentGamesFragment extends Fragment {
         @Override
         protected List<Games> doInBackground(String... params) {
 
+            if (listGames.size() > 0) listGames.clear();
+
             String urlForId = "http://54.224.222.135:4567/summoners/by-name/"
                     + params[0].toLowerCase(Locale.getDefault()).replace(" ", "");
             String jsonResponse = getJsonFromUrl(urlForId);
-            Summoner summoner;
             int summonerId;
             try {
                 summoner = gson.fromJson(jsonResponse, Summoner.class);
@@ -137,12 +151,15 @@ public class RecentGamesFragment extends Fragment {
             try {
                 recentGames = gson.fromJson(recentGamesJsonResponse, RecentGames.class);
             } catch (JsonSyntaxException e) {
+
                 Log.w("GSON: Recent Games", "GSON got null from API");
                 return null;
             }
 
-            for (Games game : recentGames.getGames()) {
-                listGames.add(game);
+            if (recentGames != null) {
+                for (Games game : recentGames.getGames()) {
+                    listGames.add(game);
+                }
             }
 
             return listGames;
@@ -159,12 +176,21 @@ public class RecentGamesFragment extends Fragment {
         protected void onPostExecute(List<Games> listGames) {
             super.onPostExecute(listGames);
 
-            progressBar.setVisibility(View.INVISIBLE);
-            lvRecentGames.setVisibility(View.VISIBLE);
+            if (!isCancelled()) {
+                progressBar.setVisibility(View.INVISIBLE);
+                lvRecentGames.setVisibility(View.VISIBLE);
 
-            RecentGamesExpandableAdapter adapter =
-                    new RecentGamesExpandableAdapter(mContext, listGames);
-            lvRecentGames.setAdapter(adapter);
+                RecentGamesAdapter adapter = new RecentGamesAdapter(mContext, listGames);
+                lvRecentGames.setAdapter(adapter);
+
+                lvRecentGames.setOnItemClickListener(this);
+            }
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, final View view, int i, long l) {
+            CustomPopupWindow window = new CustomPopupWindow(getActivity(), listGames.get(i), summoner);
+            window.initiatePopupWindow(getView());
         }
     }
 
@@ -220,6 +246,4 @@ public class RecentGamesFragment extends Fragment {
         }
         return jsonResponse;
     }
-
-
 }

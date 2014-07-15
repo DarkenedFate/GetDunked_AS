@@ -105,8 +105,9 @@ public class ProfileFragment extends Fragment {
 
         ButterKnife.inject(this, rootView);
 
-        if (savedInstanceState != null) {
-            restoreState(savedInstanceState);
+        if (suchBundle.size() > 0) {
+            restoreState(suchBundle);
+            progressBar.setVisibility(View.INVISIBLE);
         } else {
             new SetSummonerName().execute("Nwilliams239"); // Load some data for now
         }
@@ -123,35 +124,6 @@ public class ProfileFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
-
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//
-//        inflater.inflate(R.menu.profile, menu);
-//
-//        final MenuItem item = menu.findItem(R.id.action_summoner_search);
-//        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
-//
-//        searchView.setOnQueryTextListener(new OnQueryTextListener() {
-//
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                executeSearch(query);
-//                searchView.setQuery("", false);
-//                MenuItemCompat.collapseActionView(item);
-//                return false;
-//            }
-//
-//
-//            @Override
-//            public boolean onQueryTextChange(String arg0) {
-//                // TODO Auto-generated method stub
-//                return false;
-//            }
-//        });
-//
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
 
     class SetSummonerName extends AsyncTask<String, Void, Integer> {
 

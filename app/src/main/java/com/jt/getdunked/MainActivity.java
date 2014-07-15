@@ -73,10 +73,12 @@ public class MainActivity extends ActionBarActivity implements
         FragmentManager fragmentManager = getSupportFragmentManager();
         switch (position) {
             case 1:
-                fragmentManager
-                        .beginTransaction()
-                        .replace(R.id.container,
-                                ProfileActivity.newInstance(position + 1), "ProfileActivity").commit();
+                if (fragmentManager.findFragmentByTag("ProfileActivity") == null) {
+                    fragmentManager
+                            .beginTransaction()
+                            .replace(R.id.container,
+                                    ProfileActivity.newInstance(position + 1), "ProfileActivity").commit();
+                }
                 break;
             default:
                 fragmentManager
@@ -163,6 +165,12 @@ public class MainActivity extends ActionBarActivity implements
 
             super.onPostExecute(result);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("saving", true);
     }
 
     void addAllChampionsToDatabase(ChampIds champIds) {
@@ -266,5 +274,7 @@ public class MainActivity extends ActionBarActivity implements
 
         // }
     }
+
+
 
 }

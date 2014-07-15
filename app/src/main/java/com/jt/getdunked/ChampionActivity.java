@@ -1,9 +1,5 @@
 package com.jt.getdunked;
 
-import java.util.Locale;
-
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +10,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.Locale;
 
 public class ChampionActivity extends ActionBarActivity implements ActionBar.TabListener {
 
@@ -39,25 +37,6 @@ public class ChampionActivity extends ActionBarActivity implements ActionBar.Tab
 		// Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-//		Intent intent = getIntent();
-//		final int champId = intent.getIntExtra("id", 1);
-//		DatabaseHelper db = new DatabaseHelper(this);
-//		Champion champ = db.getChampion(champId);
-//
-//		Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(),
-//				Utils.getResIdByName(this, champ.getKey() + "square"));
-//		
-//		Bitmap onePixelBitmap = Bitmap.createScaledBitmap(originalBitmap, 1, 1, true);
-//		
-//		int pixel = onePixelBitmap.getPixel(0, 0);
-		
-		
-		actionBar.setBackgroundDrawable(new ColorDrawable(Color.argb(255, 0,
-				153, 204)));
-		actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.argb(
-				255, 0, 153, 204)));
-	
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.

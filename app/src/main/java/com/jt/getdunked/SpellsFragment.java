@@ -1,19 +1,21 @@
 package com.jt.getdunked;
 
-import java.util.List;
-import java.util.Locale;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import butterknife.InjectView;
 
 import com.jt.getdunked.championdata.Champion;
 import com.jt.getdunked.championdata.Spell;
+
+import java.util.List;
+import java.util.Locale;
+
+import butterknife.InjectView;
 
 public class SpellsFragment extends Fragment {
 	/**
@@ -44,7 +46,7 @@ public class SpellsFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = null;
+		View rootView;
 		Champion champ = getChampion();
 
 		Spell passive = new Spell();
@@ -56,8 +58,8 @@ public class SpellsFragment extends Fragment {
 		spellList.add(0, passive);
 		champ.setSpells(spellList);
 
-		getActivity().getActionBar().setTitle(champ.getName());
-		getActivity().getActionBar().setIcon(
+        ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(champ.getName());
+        ((ActionBarActivity)getActivity()).getSupportActionBar().setIcon(
 				Utils.getResIdByName(getActivity(),
 						champ.getKey().toLowerCase(Locale.getDefault())
 								+ "square"));

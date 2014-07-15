@@ -1,7 +1,5 @@
 package com.jt.getdunked;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -39,6 +37,7 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private ActionBar actionBar;
+    private RecentGamesFragment.GetRecentGames getRecentGames;
 
     /**
      * Returns a new instance of this fragment for the given section number.
@@ -53,6 +52,7 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
 
     public ProfileActivity() {
         setHasOptionsMenu(true);
+        setRetainInstance(true);
     }
 
 
@@ -82,7 +82,6 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
         actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         actionBar.removeAllTabs();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(51, 181, 229)));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -152,7 +151,8 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
 
                 RecentGamesFragment recentFrag = (RecentGamesFragment) getChildFragmentManager()
                         .findFragmentByTag(Utils.makeFragmentName(R.id.pager, 1));
-                recentFrag.new GetRecentGames(getActivity()).execute(query.toLowerCase());
+                getRecentGames = recentFrag.new GetRecentGames(getActivity());
+                getRecentGames.execute(query.toLowerCase());
 
                 searchView.setQuery("", false);
                 MenuItemCompat.collapseActionView(item);
@@ -195,7 +195,6 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
                 default:
                     return StatsFragment.newInstance(position + 1);
             }
-
         }
 
         @Override
@@ -225,4 +224,11 @@ public class ProfileActivity extends Fragment implements ActionBar.TabListener {
         outState.putBoolean("hasSavedInstanceState", true);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (getRecentGames != null) {
+            getRecentGames.cancel(true);
+        }
+    }
 }

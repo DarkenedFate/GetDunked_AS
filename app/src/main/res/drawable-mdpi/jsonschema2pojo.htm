@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://www.jsonschema2pojo.org/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jsonschema2pojo</title>
+    
+    <meta name="description" content="Generate Plain Old Java Objects from JSON or JSON-Schema.">
+    <meta name="keywords" content="json, jsonschema, pojo, java, javascript, jsonschema2java, jsonschema2pojo, jsonschema2dto, code generation, dto">
+
+    <link href="http://joelittlejohn.github.io/jsonschema2pojo/resources/public/lib/bootstrap.min.css" rel="stylesheet">
+    <script src="./jsonschema2pojo_files/cb=gapi.loaded_2" async=""></script><script src="./jsonschema2pojo_files/cb=gapi.loaded_1" async=""></script><script id="twitter-wjs" src="./jsonschema2pojo_files/widgets.js"></script><script src="./jsonschema2pojo_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./jsonschema2pojo_files/ga.js"></script><script src="./jsonschema2pojo_files/jquery.min.js"></script><style type="text/css"></style>
+    <script src="./jsonschema2pojo_files/bootstrap.min.js"></script>
+    <script src="./jsonschema2pojo_files/codemirror-compressed.js"></script>
+    <script src="./jsonschema2pojo_files/runmode.js"></script>
+    <script src="./jsonschema2pojo_files/index.js"></script>
+
+    <link rel="stylesheet" href="http://joelittlejohn.github.io/jsonschema2pojo/resources/public/lib/codemirror.css">
+    <link rel="stylesheet" href="http://joelittlejohn.github.io/jsonschema2pojo/resources/public/lib/eclipse.css">
+    <link rel="stylesheet" href="http://joelittlejohn.github.io/jsonschema2pojo/resources/public/index.css">
+    <link rel="canonical" href="./jsonschema2pojo_files/jsonschema2pojo.htm">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21062073-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#060;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:200px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+  </head>
+
+  <body data-twttr-rendered="true" class="">
+
+    <span id="forkongithub"><a href="https://github.com/joelittlejohn/jsonschema2pojo">Fork me on GitHub</a></span>
+
+    <div class="container">
+
+      <h1>jsonschema2pojo</h1>
+      <p class="lead">
+        Generate Plain Old Java Objects from JSON or JSON-Schema.
+      </p>
+
+      <form id="form" method="post">
+        <div class="row">
+          <div class="span6">
+            <textarea id="schema" name="schema" style="display: none;">{
+  "type":"object",
+  "properties": {
+    "foo": {
+      "type": "string"
+    },
+    "bar": {
+      "type": "integer"
+    },
+    "baz": {
+      "type": "boolean"
+    }
+  }
+}</textarea><div class="CodeMirror"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 118.59375px; left: 115.59375px;"><textarea wrap="off" autocorrect="off" autocapitalize="off" style="position: absolute; padding: 0px; width: 1px; height: 1em;"></textarea></div><div class="CodeMirror-scrollbar" style="display: none;"><div class="CodeMirror-scrollbar-inner"></div></div><div class="CodeMirror-scroll cm-s-default CodeMirror-focused" tabindex="-1"><div style="position: relative;"><div style="position: relative; top: 0px;"><div class="CodeMirror-gutter" style="height: 476px;"><div class="CodeMirror-gutter-text"><pre>1</pre><pre>2</pre><pre>3</pre><pre>4</pre><pre>5</pre><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre></div></div><div class="CodeMirror-lines"><div style="position: relative; z-index: 0; outline: none; min-width: 289px; margin-left: 29px;"><div style="position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden;"><pre>}<span class="cm-string-2">/tar twil</span><span> </span></pre></div><pre class="CodeMirror-cursor" style="top: 112px; left: 80px;">&nbsp;</pre><pre class="CodeMirror-cursor" style="visibility: hidden; left: 288px;">&nbsp;</pre><div style="position: relative; z-index: -1; display: none;"><div class="CodeMirror-selected" style="position: absolute; left: 24px; top: 14px; right: 361px; height: 14px;"></div></div><div><pre>{</pre><pre>   {</pre><pre>      <span class="cm-string">"id"</span>: <span class="cm-number">3</span>,</pre><pre>      <span class="cm-string">"name"</span>: <span class="cm-string">"jmccaffrey"</span>,</pre><pre>      <span class="cm-string">"profileIconId"</span>: <span class="cm-number">582</span>,</pre><pre>      <span class="cm-string">"revisionDate"</span>: <span class="cm-number">1392472110000</span>,</pre><pre>      <span class="cm-string">"summonerLevel"</span>: <span class="cm-number">30</span></pre><pre>   }</pre><pre>}<span class="cm-string-2">/tar twil</span></pre></div></div></div></div></div></div></div>
+          </div>
+          <div class="span4">
+            <div class="control-group">
+            <label>
+              Package
+              <input id="targetpackage" name="targetpackage" value="com.example">
+            </label>
+            </div>
+
+            <div class="control-group">
+            <label>
+              Class name
+              <input id="classname" name="classname" value="Example">
+            </label>
+            </div>
+
+            <label class="form-section">
+              Source type:<br>
+              <label class="radio inline">
+                <input type="radio" name="sourcetype" id="sourceType1" value="jsonschema" checked="">
+                JSON Schema
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="sourcetype" id="sourceType2" value="json">
+                JSON
+              </label>
+            </label>
+            <label class="form-section">
+              Annotation style:<br>
+              <label class="radio inline" style="width: 6em;">
+                <input type="radio" name="annotationstyle" id="annotationStyle1" value="jackson2" checked="">
+                Jackson 2.x
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="annotationstyle" id="annotationStyle2" value="jackson1">
+                Jackson 1.x
+              </label><br>
+              <label class="radio inline" style="width: 6em;">
+                <input type="radio" name="annotationstyle" id="annotationStyle2" value="gson">
+                Gson
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="annotationstyle" id="annotationStyle3" value="none">
+                None
+              </label>
+            </label>
+            <label class="form-section checkbox">
+              <input name="generatebuilders" value="true" type="checkbox">Generate builder methods
+            </label>
+            <label class="checkbox">
+              <input name="useprimitives" value="true" type="checkbox">Use primitive types
+            </label>
+            <label class="checkbox">
+              <input name="uselongintegers" value="true" type="checkbox">Use long integers
+            </label>
+            <label class="checkbox">
+              <input name="usedoublenumbers" value="true" type="checkbox" checked="checked">Use double numbers
+            </label>
+            <label class="checkbox">
+              <input name="usejodadates" value="true" type="checkbox">Use Joda dates
+            </label>
+            <label class="checkbox">
+              <input name="usecommonslang3" value="true" type="checkbox">Use Commons-Lang3
+            </label>
+            <label class="checkbox">
+              <input name="includehashcodeandequals" value="true" type="checkbox">Include <code>hashCode</code> and <code>equals</code>
+            </label>
+            <label class="checkbox">
+              <input name="includetostring" value="true" type="checkbox">Include <code>toString</code>
+            </label>
+            <label class="checkbox">
+              <input name="includejsr303annotations" value="true" type="checkbox">Include JSR-303 annotations
+            </label>
+          </div>
+        </div>
+
+        <div class="row form-section">
+          <div class="span6">
+            <button class="btn submit" id="preview-button" data-loading-text="Generating...">Preview</button>
+            <button class="btn submit" id="jar-button" data-loading-text="Generating...">Jar</button>
+            <a id="download-jar-link" class="hide"></a>
+          </div>
+        </div>
+      </form>
+
+      <div id="preview-modal" class="modal hide fade" aria-hidden="true" style="display: none;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3>Preview</h3>
+        </div>
+        <div id="preview" class="modal-body CodeMirror" style="overflow: auto"></div>
+      </div>
+
+      <div id="alert-area">
+      </div>
+
+      <div class="row form-section">
+        <div class="span2">
+            Use this tool offline:
+        </div>
+        <div class="span2">
+          <a href="https://github.com/joelittlejohn/jsonschema2pojo/wiki/Getting-Started#wiki-the-maven-plugin">
+            Maven plugin
+          </a>
+        </div>
+        <div class="span2">
+          <a href="https://github.com/ben-manes/gradle-jsonschema2pojo-plugin">
+            Gradle plugin
+          </a>
+        </div>
+        <div class="span2">
+          <a href="https://github.com/joelittlejohn/jsonschema2pojo/wiki/Getting-Started#wiki-the-ant-task">
+            Ant task
+          </a>
+        </div>
+        <div class="span2">
+          <a href="https://github.com/joelittlejohn/jsonschema2pojo/wiki/Getting-Started#wiki-the-command-line-interface">
+            CLI
+          </a>
+        </div>
+        <div class="span2">
+          <a href="https://github.com/joelittlejohn/jsonschema2pojo/wiki/Getting-Started#using-jsonschema2pojo-within-your-java-project-embedded">
+            Java API
+          </a>
+        </div>
+      </div>
+
+      <p class="muted form-section">
+        <iframe style="float: right;" src="./jsonschema2pojo_files/github-btn.htm" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+
+        <script type="text/javascript" src="./jsonschema2pojo_files/plusone.js" gapi_processed="true">
+          {lang: 'en-GB'}
+        </script>
+        </p><div style="float: right; margin-right: 1.5em;">
+          <div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 88px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 88px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1399274560904" name="I0_1399274560904" src="./jsonschema2pojo_files/sharebutton.htm" data-gapiattached="true" title="+Share"></iframe></div>
+        </div>
+        <div style="float: right;">
+          <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./jsonschema2pojo_files/tweet_button.1399101891.htm" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <small>
+          Copyright © 2012-2014 Joe Littlejohn
+          <a href="https://github.com/joelittlejohn/jsonschema2pojo/issues?page=1&state=open">
+            Bugs?
+          </a>
+        </small>
+      <p></p>
+    </div>
+  
+
+
+<iframe name="oauth2relay1532044146" id="oauth2relay1532044146" src="./jsonschema2pojo_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>
